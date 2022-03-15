@@ -2,14 +2,23 @@ const express = require('express');
 
 const app = express();
 
-app.get('/', (req, res) => {
-  const blog = {
-    id: 1,
-    title: 'Blog title',
-    description: 'Blog description',
-  };
+//TEMPLATE ENGİNE
+app.set('view engine', 'ejs');
 
-  res.send(blog);
+//MIDDLEWARES
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+  /*res.sendFile(path.resolve(__dirname, 'views/index.ejs'));*/
+  res.render('index');
+});
+app.get('/about', (req, res) => {
+  /*res.sendFile(path.resolve(__dirname, 'views/index.ejs'));*/
+  res.render('about');
+});
+app.get('/add', (req, res) => {
+  /*res.sendFile(path.resolve(__dirname, 'views/index.ejs'));*/
+  res.render('add');
 });
 
 const port = 3000;
