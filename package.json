@@ -19,7 +19,8 @@
   "homepage": "https://github.com/emreylmaz/CleanBlog#readme",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^6.2.7"
   },
   "devDependencies": {
     "nodemon": "^2.0.15",
