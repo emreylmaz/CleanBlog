@@ -26,6 +26,13 @@ app.get('/', async (req, res) => {
     post,
   });
 });
+app.get('/posts/:id', async (req, res) => {
+  //res.render('about');
+  const post = await Post.findById(req.params.id);
+  res.render('post', {
+    post,
+  });
+});
 app.get('/about', (req, res) => {
   /*res.sendFile(path.resolve(__dirname, 'views/index.ejs'));*/
   res.render('about');
